@@ -2,6 +2,7 @@
 {
     using System;
     using System.Web.Mvc;
+    using PartyInvites.Models;
 
     public class HomeController : Controller
     {
@@ -16,9 +17,17 @@
             return View();
         }
 
+        [HttpGet]
         public ViewResult RsvpForm()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ViewResult RsvpForm(GuestResponse guestResponse)
+        {
+            //TODO: send email
+            return View("Thanks", guestResponse);
         }
     }
 }
