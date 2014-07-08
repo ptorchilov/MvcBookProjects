@@ -26,8 +26,13 @@
         [HttpPost]
         public ViewResult RsvpForm(GuestResponse guestResponse)
         {
-            //TODO: send email
-            return View("Thanks", guestResponse);
+            if (ModelState.IsValid)
+            {
+                //TODO: send email
+                return View("Thanks", guestResponse);
+            }
+
+            return View();
         }
     }
 }
