@@ -97,9 +97,14 @@
                                                   }
                                };
 
+            Func<Product, bool> categoryFilter = delegate(Product product)
+                {
+                    return product.Category == "Soccer";
+                };
+
             decimal total = 0;
 
-            foreach (var product in products.FilterByCategory("Soccer"))
+            foreach (var product in products.Filter(categoryFilter))
             {
                 total += product.Price;
             }
