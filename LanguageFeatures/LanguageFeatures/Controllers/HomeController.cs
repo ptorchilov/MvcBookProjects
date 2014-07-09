@@ -97,14 +97,12 @@
                                                   }
                                };
 
-            Func<Product, bool> categoryFilter = delegate(Product product)
-                {
-                    return product.Category == "Soccer";
-                };
+            Func<Product, bool> categoryFilter = product => product.Category == "Soccer";
 
             decimal total = 0;
 
-            foreach (var product in products.Filter(categoryFilter))
+            foreach (var product in products.
+                Filter(product => product.Category == "Soccer" && product.Price > 20))
             {
                 total += product.Price;
             }
