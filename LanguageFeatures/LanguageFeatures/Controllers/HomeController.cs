@@ -2,9 +2,10 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Security.Cryptography;
     using System.Web.Mvc;
     using System.Text;
-
+    using System.Linq;
     using LanguageFeatures.Models;
 
     public class HomeController : Controller
@@ -125,6 +126,36 @@
             }
 
             return View("Result", (Object) result.ToString());
+        }
+
+        public ViewResult FindProducts()
+        {
+            Product[] products =
+                {
+                    new Product { Name = "Kobyak", Price = 275M, Category = "Watersports" },
+                    new Product { Name = "Lifejacker", Price = 48.95M, Category = "Watersports" },
+                    new Product { Name = "Soccer ball", Price = 19.50M, Category = "Soccer" },
+                    new Product { Name = "Corner flag", Price = 34.95M, Category = "Soccer" }
+                };
+
+            var foundProducts = from match in products
+                                orderby match.Price descending
+                                select new { match.Name, match.Price };
+
+            var count = 0;
+
+            var result = new StringBuilder();
+
+            foreach (var product in foundProducts)
+            {
+                result.AppendFormat("Price: {0}", product.Price).Append(" ");
+                if (++count == 3)
+                {
+                    break;
+                }
+            }
+
+            return View("Result", (Object)result.ToString());
         }
 
         #endregion
