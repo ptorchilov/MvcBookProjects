@@ -12,6 +12,6 @@
 
         public decimal Price { get; set; }
 
-        public String Catigory { get; set; }
+        public String Category { get; set; }
     }
 }

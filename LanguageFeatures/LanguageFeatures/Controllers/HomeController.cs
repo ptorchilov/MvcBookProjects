@@ -33,7 +33,7 @@
                                        { "apple", 10 }, { "orange", 20 }, { "plum", 30 }
                                    };
 
-            return View("Result", (Object) stringArray[1]);
+            return View("Result", (Object) myDictionary["orange"]);
         }
 
         public ViewResult CreateProduct()
@@ -44,7 +44,7 @@
                                     Name = "Kobyak",
                                     Description = "A boat for one person",
                                     Price = 270,
-                                    Catigory = "Watersports"
+                                    Category = "Watersports"
                                 };
 
             return View("Result", (Object)String.Format("Category: {0}", myProduct.Price));
@@ -82,6 +82,29 @@
 
             return View("Result", (Object)String.Format("Cart Total: {0:c}, Array Total: {1:c}",
                 cartTotal, arrayTotal));
+        }
+
+        public ViewResult UseFilterExtensionMethod()
+        {
+            var products = new ShoppingCart
+                               {
+                                   Products = new List<Product>
+                                                  {
+                                                      new Product { Name = "Kobyak", Price = 275M, Category = "Watersports"},
+                                                      new Product { Name = "Lifejacker", Price = 48.95M, Category = "Watersports"},
+                                                      new Product { Name = "Soccer ball", Price = 19.50M, Category = "Soccer"},
+                                                      new Product { Name = "Corner flag", Price = 34.95M, Category = "Soccer"} 
+                                                  }
+                               };
+
+            decimal total = 0;
+
+            foreach (var product in products.FilterByCategory("Soccer"))
+            {
+                total += product.Price;
+            }
+
+            return View("Result", (Object) String.Format("Total: {0}", total));
         }
 
         #endregion

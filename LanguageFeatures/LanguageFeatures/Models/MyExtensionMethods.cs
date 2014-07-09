@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace LanguageFeatures.Models
+﻿namespace LanguageFeatures.Models
 {
+    using System;
+    using System.Collections.Generic;
+
     public static class MyExtensionMethods
     {
         public static decimal TotalProces(this IEnumerable<Product> productEnum)
@@ -18,5 +16,17 @@ namespace LanguageFeatures.Models
 
             return total;
         }
+
+        public static IEnumerable<Product> FilterByCategory(
+            this IEnumerable<Product> productEnum, String categoryParam)
+        {
+            foreach (var product in productEnum)
+            {
+                if (product.Category == categoryParam)
+                {
+                    yield return product;
+                }
+            }
+        } 
     }
 }
