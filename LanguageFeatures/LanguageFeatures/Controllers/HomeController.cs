@@ -3,14 +3,12 @@
     using System;
     using System.Collections.Generic;
     using System.Web.Mvc;
+    using System.Text;
 
     using LanguageFeatures.Models;
 
     public class HomeController : Controller
     {
-        //
-        // GET: /Home/
-
         #region Public Methods and Operators
 
         public ViewResult AutoProperty()
@@ -108,6 +106,25 @@
             }
 
             return View("Result", (Object) String.Format("Total: {0}", total));
+        }
+
+        public ViewResult CreateAnonType()
+        {
+            var oddsAndEnds = new[]
+                                  {
+                                      new { Name = "MVC", Category = "Pattern" },
+                                      new { Name = "Hat", Category = "Clothing" },
+                                      new { Name = "Apple", Category = "Fruit" }
+                                  };
+
+            var result = new StringBuilder();
+
+            foreach (var item in oddsAndEnds)
+            {
+                result.Append(item.Name).Append(" ");
+            }
+
+            return View("Result", (Object) result.ToString());
         }
 
         #endregion
