@@ -61,7 +61,7 @@
                            {
                                Products = new List<Product>
                                        {
-                                           new Product { Name = "Kobyak", Price = 275 },
+                                           new Product { Name = "Kobyak", Price = 275M },
                                            new Product { Name = "Lifejacker", Price = 48.95M },
                                            new Product { Name = "Soccer ball", Price = 19.50M},
                                            new Product { Name = "Corner flag", Price = 34.95M}
@@ -70,8 +70,18 @@
 
             var cartTotal = cart.TotalProces();
 
+            var productArray = new[]
+                                   {
+                                       new Product { Name = "Kobyak", Price = 275M },
+                                       new Product { Name = "Lifejacker", Price = 48.95M },
+                                       new Product { Name = "Soccer ball", Price = 19.50M },
+                                       new Product { Name = "Corner flag", Price = 34.95M }
+                                   };
 
-            return View("Result", (Object)String.Format("Total: {0:c}", cartTotal));
+            var arrayTotal = productArray.TotalProces();
+
+            return View("Result", (Object)String.Format("Cart Total: {0:c}, Array Total: {1:c}",
+                cartTotal, arrayTotal));
         }
 
         #endregion

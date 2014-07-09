@@ -7,11 +7,11 @@ namespace LanguageFeatures.Models
 {
     public static class MyExtensionMethods
     {
-        public static decimal TotalProces(this ShoppingCart cartParam)
+        public static decimal TotalProces(this IEnumerable<Product> productEnum)
         {
             decimal total = 0;
 
-            foreach (var product in cartParam.Products)
+            foreach (var product in productEnum)
             {
                 total += product.Price;
             }
