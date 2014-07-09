@@ -138,9 +138,13 @@
                     new Product { Name = "Corner flag", Price = 34.95M, Category = "Soccer" }
                 };
 
-            var foundProducts = from match in products
-                                orderby match.Price descending
-                                select new { match.Name, match.Price };
+            var foundProducts = products.OrderByDescending(e => e.Price)
+                .Take(3)
+                .Select(e => new
+                                 {
+                                     e.Name,
+                                     e.Price
+                                 });
 
             var count = 0;
 
@@ -149,10 +153,6 @@
             foreach (var product in foundProducts)
             {
                 result.AppendFormat("Price: {0}", product.Price).Append(" ");
-                if (++count == 3)
-                {
-                    break;
-                }
             }
 
             return View("Result", (Object)result.ToString());
