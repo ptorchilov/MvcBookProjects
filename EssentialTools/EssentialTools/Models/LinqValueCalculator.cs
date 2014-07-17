@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public class LinqValueCalculator
+    public class LinqValueCalculator : IValueCalculator
     {
         public decimal ValueProducts(IEnumerable<Product> products)
         {

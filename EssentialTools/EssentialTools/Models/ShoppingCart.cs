@@ -4,9 +4,9 @@
 
     public class ShoppingCart
     {
-        private readonly LinqValueCalculator calculator;
+        private readonly IValueCalculator calculator;
 
-        public ShoppingCart(LinqValueCalculator calculator)
+        public ShoppingCart(IValueCalculator calculator)
         {
             this.calculator = calculator;
         }

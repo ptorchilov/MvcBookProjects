@@ -15,7 +15,7 @@
 
         public ActionResult Index()
         {
-            var calculator = new LinqValueCalculator();
+            IValueCalculator calculator = new LinqValueCalculator();
             var cart = new ShoppingCart(calculator)
                            {
                                Products = products
