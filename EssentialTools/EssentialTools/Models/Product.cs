@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace EssentialTools.Models
+﻿namespace EssentialTools.Models
 {
+    using System;
+
     public class Product
     {
         public int ProductID { get; set; }

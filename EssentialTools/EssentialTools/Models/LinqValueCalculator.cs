@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace EssentialTools.Models
+﻿namespace EssentialTools.Models
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
     public class LinqValueCalculator
     {
         public decimal ValueProducts(IEnumerable<Product> products)

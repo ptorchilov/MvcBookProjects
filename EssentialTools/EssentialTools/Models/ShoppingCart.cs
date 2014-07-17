@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace EssentialTools.Models
+﻿namespace EssentialTools.Models
 {
+    using System.Collections.Generic;
+
     public class ShoppingCart
     {
         private readonly LinqValueCalculator calculator;
