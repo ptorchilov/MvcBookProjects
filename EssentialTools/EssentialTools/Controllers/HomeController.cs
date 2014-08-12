@@ -2,7 +2,6 @@
 {
     using System.Web.Mvc;
     using EssentialTools.Models;
-    using Ninject;
 
     public class HomeController : Controller
     {
@@ -14,14 +13,15 @@
                 new Product { Name = "Corner flag", Category = "Soccer", Price = 34.95M }
             };
 
+        private IValueCalculator calculator;
+
+        public HomeController(IValueCalculator calculateParams)
+        {
+            calculator = calculateParams;
+        }
+
         public ActionResult Index()
         {
-            IKernel ninjectKernel = new StandardKernel();
-
-            ninjectKernel.Bind<IValueCalculator>().To<LinqValueCalculator>();
-
-            IValueCalculator calculator = ninjectKernel.Get<IValueCalculator>();
-
             var cart = new ShoppingCart(calculator)
                            {
                                Products = products
