@@ -31,7 +31,7 @@
         private void AddBindings()
         {
             kernel.Bind<IValueCalculator>().To<LinqValueCalculator>();
-            kernel.Bind<IDiscountHelper>().To<DefaultDiscoutHelper>();
+            kernel.Bind<IDiscountHelper>().To<DefaultDiscoutHelper>().WithPropertyValue("DiscountSize", 50m);
         }
     }
 }
