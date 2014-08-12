@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace EssentialTools.Models
+﻿namespace EssentialTools.Models
 {
     public interface IDiscountHelper
     {
@@ -12,11 +7,16 @@ namespace EssentialTools.Models
 
     public class DefaultDiscoutHelper : IDiscountHelper
     {
-        public decimal DiscountSize { get; set; }
+        private decimal discountSize;
+
+        public DefaultDiscoutHelper(decimal discountParam)
+        {
+            discountSize = discountParam;
+        }
 
         public decimal ApplyDiscount(decimal totalParam)
         {
-            return (totalParam - (DiscountSize / 100m * totalParam));
+            return (totalParam - (discountSize / 100m * totalParam));
         }
     }
 }
