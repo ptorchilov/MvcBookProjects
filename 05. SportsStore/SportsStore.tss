@@ -1,2 +1,32 @@
 <?xml version="1.0"?>
-<ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ArrayOfArrayOfString>
+    <ArrayOfString>
+      <string>D:\Test Solutions\MvcBookProjects\05. SportsStore\SportsStore.WebUI\App_Start\BundleConfig.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Test Solutions\MvcBookProjects\05. SportsStore\SportsStore.WebUI\App_Start\FilterConfig.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Test Solutions\MvcBookProjects\05. SportsStore\SportsStore.WebUI\App_Start\RouteConfig.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Test Solutions\MvcBookProjects\05. SportsStore\SportsStore.WebUI\App_Start\WebApiConfig.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Test Solutions\MvcBookProjects\05. SportsStore\SportsStore.UnitTests\UnitTest1.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Test Solutions\MvcBookProjects\05. SportsStore\SportsStore.WebUI\Infrastructure\NinjectControllerFactory.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Test Solutions\MvcBookProjects\05. SportsStore\SportsStore.WebUI\Global.asax.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Test Solutions\MvcBookProjects\05. SportsStore\SportsStore.Domain\Entities\Product.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Test Solutions\MvcBookProjects\05. SportsStore\SportsStore.Domain\Abstract\IProductsRepository.cs</string>
+    </ArrayOfString>
+  </ArrayOfArrayOfString>
+</ArrayOfArrayOfArrayOfString>
