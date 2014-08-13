@@ -1,7 +1,7 @@
 ﻿namespace EssentialTools.Controllers
 {
     using System.Web.Mvc;
-    using EssentialTools.Models;
+    using Models;
 
     public class HomeController : Controller
     {
