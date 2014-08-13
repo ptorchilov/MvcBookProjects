@@ -2,28 +2,25 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>D:\Test Solutions\MvcBookProjects\EssentialTools\EssentialTools\Controllers\HomeController.cs</string>
+      <string>D:\Test Solutions\MvcBookProjects\04. EssentialTools\EssentialTools\Models\MinimumDiscoutHelper.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Test Solutions\MvcBookProjects\EssentialTools\EssentialTools\Views\Home\Index.cshtml</string>
+      <string>D:\Test Solutions\MvcBookProjects\04. EssentialTools\EssentialTools\Models\LinqValueCalculator.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Test Solutions\MvcBookProjects\EssentialTools\EssentialTools\Views\Web.config</string>
+      <string>D:\Test Solutions\MvcBookProjects\04. EssentialTools\EssentialTools\Models\ShoppingCart.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Test Solutions\MvcBookProjects\EssentialTools\EssentialTools\Global.asax.cs</string>
+      <string>D:\Test Solutions\MvcBookProjects\04. EssentialTools\EssentialTools\Models\Discount.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Test Solutions\MvcBookProjects\EssentialTools\EssentialTools\Models\IValueCalculator.cs</string>
+      <string>D:\Test Solutions\MvcBookProjects\04. EssentialTools\EssentialTools.Tests\UnitTest2.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Test Solutions\MvcBookProjects\EssentialTools\EssentialTools\Models\Product.cs</string>
+      <string>D:\Test Solutions\MvcBookProjects\04. EssentialTools\EssentialTools.Tests\packages.config</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Test Solutions\MvcBookProjects\EssentialTools\EssentialTools\Models\LinqValueCalculator.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Test Solutions\MvcBookProjects\EssentialTools\EssentialTools\Models\ShoppingCart.cs</string>
+      <string>D:\Test Solutions\MvcBookProjects\04. EssentialTools\EssentialTools\packages.config</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>
