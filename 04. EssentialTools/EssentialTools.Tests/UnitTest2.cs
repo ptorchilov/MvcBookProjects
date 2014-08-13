@@ -3,7 +3,8 @@
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Models;
     using System.Linq;
-    
+    using Moq;
+
     [TestClass]
     public class UnitTest2
     {
@@ -20,8 +21,10 @@
         public void SumProductsCorrectly()
         {
             //arrage
-            var discounter = new MinimumDiscoutHelper();
-            var target = new LinqValueCalculator(discounter);
+            var mock = new Mock<IDiscountHelper>();
+            mock.Setup(m => m.ApplyDiscount(It.IsAny<decimal>()))
+                .Returns<decimal>(total => total);
+            var target = new LinqValueCalculator(mock.Object);
             var goalTotal = products.Sum(e => e.Price);
 
             //act
