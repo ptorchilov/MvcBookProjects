@@ -27,8 +27,7 @@
 
         private void AddBindings()
         {
-            var mock = new Mock<IProductsRepository>();
-
+            var mock = new Mock<IProductRepository>();
 
             mock.Setup(m => m.Products).Returns(new List<Product>
                 {
@@ -37,7 +36,7 @@
                     new Product {Name = "Running shoes", Price = 95}
                 }.AsQueryable());
 
-            ninjectKernel.Bind<IProductsRepository>().ToConstant(mock.Object);
+            ninjectKernel.Bind<IProductRepository>().ToConstant(mock.Object);
         }
     }
 }

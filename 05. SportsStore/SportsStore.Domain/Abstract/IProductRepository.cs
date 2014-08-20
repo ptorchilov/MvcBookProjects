@@ -3,7 +3,7 @@
     using System.Linq;
     using Entities;
 
-    public interface IProductsRepository
+    public interface IProductRepository
     {
         IQueryable<Product> Products { get; }
     }
