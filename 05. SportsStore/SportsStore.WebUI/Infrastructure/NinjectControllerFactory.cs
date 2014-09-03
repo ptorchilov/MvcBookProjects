@@ -4,7 +4,6 @@
     using System.Web.Mvc;
     using System.Web.Routing;
     using Domain.Abstract;
-
     using Ninject;
     using Domain.Concrete;
 
