@@ -12,3 +12,7 @@
         <h4>@product.Price.ToString("c")</h4>
     </div>
 }
+
+    <div class="pager">
+        @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
+    </div>
