@@ -22,7 +22,7 @@
             {
                 Products = repository.Products
                     .OrderBy(p => p.ProductID)
-                    .Skip((page - 1)*PageSize)
+                    .Skip((page - 1) * PageSize)
                     .Take(PageSize),
                 PagingInfo = new PagingInfo
                 {

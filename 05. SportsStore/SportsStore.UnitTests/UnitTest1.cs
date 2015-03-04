@@ -16,7 +16,7 @@
     public class UnitTest1
     {
         [TestMethod]
-        public void CanPaginate()
+        public void Can_Paginate()
         {
             //Arrange
             var mock = new Mock<IProductRepository>();
@@ -46,7 +46,7 @@
         }
 
         [TestMethod]
-        public void CanGeneratePageLinks()
+        public void Can_GeneratePageLinks()
         {
             //Arrnge - define an HTML helper
             HtmlHelper helper = null;
@@ -72,7 +72,7 @@
         }
 
         [TestMethod]
-        public void CanSendPaginationViewModel()
+        public void Can_SendPaginationViewModel()
         {
             //Arrange
             var mock = new Mock<IProductRepository>();

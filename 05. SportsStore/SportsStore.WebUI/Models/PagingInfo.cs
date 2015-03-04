@@ -12,7 +12,7 @@
 
         public int TotalPages
         {
-            get { return (int) Math.Ceiling((decimal) TotalItems/ItemsPerPage); }
+            get { return (int) Math.Ceiling((decimal) TotalItems / ItemsPerPage); }
         }
     }
 }
