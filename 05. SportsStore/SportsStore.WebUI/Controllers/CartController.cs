@@ -9,7 +9,7 @@
 
     public class CartController : Controller
     {
-        private IProductRepository repository;
+        private readonly IProductRepository repository;
 
         public CartController(IProductRepository repository)
         {
@@ -53,6 +53,7 @@
 
         private Cart GetCart()
         {
+            //TODO: fix bug - empty cart on first addition
             var cart = (Cart) Session["Cart"];
 
             if (cart == null)
