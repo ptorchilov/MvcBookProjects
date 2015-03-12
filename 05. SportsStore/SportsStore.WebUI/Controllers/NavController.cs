@@ -14,8 +14,10 @@
             this.repository = repository;
         }
 
-        public PartialViewResult Menu()
+        public PartialViewResult Menu(String category = null)
         {
+            ViewBag.SelectedCategory = category;
+
             var categories = repository.Products
                 .Select(p => p.Category)
                 .Distinct()

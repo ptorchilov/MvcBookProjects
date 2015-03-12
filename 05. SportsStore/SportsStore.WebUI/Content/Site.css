@@ -138,3 +138,28 @@ div.pager a.selected {
     background-color: #353535;
     color: white;
 }
+
+/* Styles for sidebar
+-----------------------------------------------------------*/
+
+div#categories a {
+    font: bold 1.1em "Arial Narrow", "Franclin Gothic Medium", Arial;
+    display: block;
+    text-decoration: none;
+    padding: .6em;
+    color: black;
+    border-bottom: 1px solid silver;
+}
+
+div#categories a.selected {
+    background-color: black;
+    color: white;
+}
+
+div#categories a:hover {
+    background-color: #ccc;
+}
+
+div#categories a.selected:hover {
+    background-color: #666;
+}

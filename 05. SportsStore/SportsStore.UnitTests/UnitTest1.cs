@@ -28,7 +28,7 @@
                 new Product {ProductID = 1, Name = "P3"},
                 new Product {ProductID = 1, Name = "P4"},
                 new Product {ProductID = 1, Name = "P5"}
-            }.AsQueryable());
+            }.AsQueryable);
 
             var controller = new ProductController(mock.Object)
             {
@@ -84,7 +84,7 @@
                 new Product {ProductID = 3, Name = "P3"},
                 new Product {ProductID = 4, Name = "P4"},
                 new Product {ProductID = 5, Name = "P5"}
-            }.AsQueryable());
+            }.AsQueryable);
 
             //Arrage
             var controller = new ProductController(mock.Object)
@@ -117,7 +117,7 @@
                 new Product { ProductID = 3, Name = "P3", Category = "Cat1" }, 
                 new Product { ProductID = 4, Name = "P4", Category = "Cat2" }, 
                 new Product { ProductID = 5, Name = "P5", Category = "Cat3" }
-            }.AsQueryable());
+            }.AsQueryable);
 
             //Arrage - create a controller and make the page size items
             var controller = new ProductController(mock.Object)
@@ -147,7 +147,7 @@
                 new Product { ProductID = 2, Name = "P2", Category = "Apples" }, 
                 new Product { ProductID = 3, Name = "P3", Category = "Plums" }, 
                 new Product { ProductID = 4, Name = "P4", Category = "Oranges" }
-            }.AsQueryable());
+            }.AsQueryable);
 
             //Arrange - setup controller
             var controller = new NavController(mock.Object);
@@ -160,6 +160,32 @@
             Assert.IsTrue(results[0] == "Apples");
             Assert.IsTrue(results[1] == "Oranges");
             Assert.IsTrue(results[2] == "Plums");
+        }
+
+        [TestMethod]
+        public void Indicates_SelectedCategory()
+        {
+            //Arrange - create mock repository
+            var mock = new Mock<IProductRepository>();
+
+            mock.Setup(m => m.Products).Returns(new []
+            {
+                new Product { ProductID = 1, Name = "P1", Category = "Apples"},
+                new Product { ProductID = 2, Name = "P2", Category = "Oranges"}
+            }.AsQueryable
+            );
+
+            //Arrange - create contoller
+            var controller = new NavController(mock.Object);
+
+            //Arrange - define selected category
+            const string category = "Apples";
+
+            //Action
+            var result = controller.Menu(category).ViewBag.SelectedCategory;
+
+            //Assert
+            Assert.AreEqual(category, result);
         }
     }
 }
