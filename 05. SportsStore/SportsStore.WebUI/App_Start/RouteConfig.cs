@@ -53,7 +53,7 @@
                 url: "{category}/Page{page}",
                 defaults: new
                 {
-                    controller = "Products",
+                    controller = "Product",
                     action = "List"
                 },
                 constraints: new
