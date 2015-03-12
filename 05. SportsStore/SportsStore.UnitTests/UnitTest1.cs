@@ -135,6 +135,7 @@
             Assert.IsTrue(result[1].Name == "P4" && result[1].Category == "Cat2");
         }
 
+        [TestMethod]
         public void Can_CreateCategories()
         {
             //Arrage - create mock repository
