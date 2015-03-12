@@ -8,7 +8,7 @@
 
     public class ProductController : Controller
     {
-        private IProductRepository repository;
+        private readonly IProductRepository repository;
 
         public int PageSize = 4;
 

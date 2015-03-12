@@ -1,12 +1,12 @@
 ﻿namespace SportsStore.Domain.Concrete
 {
-    using Domain.Abstract;
-    using Domain.Entities;
+    using Abstract;
+    using Entities;
     using System.Linq;
 
     public class EFProductRepository : IProductRepository
     {
-        private EFDbContext context = new EFDbContext();
+        private readonly EFDbContext context = new EFDbContext();
 
         public IQueryable<Product> Products
         {
