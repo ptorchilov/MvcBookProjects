@@ -13,7 +13,7 @@
     using WebUI.Models;
 
     [TestClass]
-    public class UnitTest1
+    public class StoreTests
     {
         [TestMethod]
         public void Can_Paginate()
