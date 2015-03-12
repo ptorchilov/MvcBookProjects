@@ -1,5 +1,6 @@
 ﻿namespace SportsStore.WebUI
 {
+    using System;
     using System.Web.Mvc;
     using System.Web.Routing;
 
@@ -11,14 +12,59 @@
 
             routes.MapRoute(
                 name: null,
-                url: "Page{page}",
-                defaults: new { controller = "Product", action = "List" }
+                url: "",
+                defaults: new
+                {
+                    controller = "Product",
+                    action = "List",
+                    category = (String) null,
+                    page = 1
+                }
             );
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Product", action = "List", id = UrlParameter.Optional }
+                name: null,
+                url: "Page{page}",
+                defaults: new
+                {
+                    controller = "Product",
+                    action = "List",
+                    category = (String) null
+                },
+                constraints: new
+                {
+                    page = @"\d+"  
+                }
+            );
+
+            routes.MapRoute(
+                name: null,
+                url : "{category}",
+                defaults: new
+                {
+                    controller = "Product",
+                    action = "List",
+                    page = 1
+                }
+            );
+
+            routes.MapRoute(
+                name: null,
+                url: "{category}/Page{page}",
+                defaults: new
+                {
+                    controller = "Products",
+                    action = "List"
+                },
+                constraints: new
+                {
+                    page = @"\d+"
+                }
+            );
+
+            routes.MapRoute(
+                name: null,
+                url: "{controller}/{action}"
             );
         }
     }
