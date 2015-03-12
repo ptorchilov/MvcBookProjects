@@ -187,5 +187,40 @@
             //Assert
             Assert.AreEqual(category, result);
         }
+
+        [TestMethod]
+        public void Can_CategorySpecificProductCount()
+        {
+            //Arrange - create repository
+            var mock = new Mock<IProductRepository>();
+
+            mock.Setup(m => m.Products).Returns(new []
+            {
+                new Product { ProductID = 1, Name = "P1", Category = "Apples"},
+                new Product { ProductID = 2, Name = "P2", Category = "Oranges"},
+                new Product { ProductID = 3, Name = "P3", Category = "Apples"},
+                new Product { ProductID = 4, Name = "P4", Category = "Oranges"},
+                new Product { ProductID = 5, Name = "P5", Category = "Plubs"},
+            }.AsQueryable   
+            );
+
+            //Arrange - create controller
+            var controller = new ProductController(mock.Object)
+            {
+                PageSize = 3
+            };
+
+            //Action
+            var apples = ((ProductsListViewModel) controller.List("Apples").Model).PagingInfo.TotalItems;
+            var oranges = ((ProductsListViewModel) controller.List("Oranges").Model).PagingInfo.TotalItems;
+            var plubs = ((ProductsListViewModel) controller.List("Plubs").Model).PagingInfo.TotalItems;
+            var allCategories = ((ProductsListViewModel) controller.List(null).Model).PagingInfo.TotalItems;
+
+            //Assert
+            Assert.AreEqual(apples, 2);
+            Assert.AreEqual(oranges, 2);
+            Assert.AreEqual(plubs, 1);
+            Assert.AreEqual(allCategories, 5);
+        }
     }
 }
